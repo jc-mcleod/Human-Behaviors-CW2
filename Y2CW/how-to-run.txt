@@ -1,0 +1,37 @@
+On Windows:
+Open a Powershell terminal and navigate to this directory. 
+
+> cd C:/Users/MyUser/hbcs-cw1
+
+Then run the Powershell script run-website.ps1:
+
+> .\run-website.ps1
+
+On Linux:
+Open a terminal and navigate to this directory.
+
+> cd /home/users/MyUser/hbcs-cw1
+
+Ensure that the script is executable:
+
+> chmod +x ./run-website.sh
+
+Then run the Bash script run-website.sh:
+
+> ./run-website.sh
+
+
+The scripts will use Python 3's built-in module http.server to run a local webserver which will then be accessible within the browser. 
+Python comes by default on most Linux distributions. If Python 3 is not installed on your system, you can install it following the instructions below.
+
+Windows:
+Download the Windows installer (64-bit) from the link below:
+https://www.python.org/downloads/release/python-397/
+
+When installing, ensure the "Add to PATH" option is checked.
+
+Linux:
+Run the command below:
+
+apt install python3
+

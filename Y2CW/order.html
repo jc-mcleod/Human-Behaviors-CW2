@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Rentals</title>
+    <link href="/styles/main.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <strong>Movie Rentals</strong>
+    </header>
+    <div id="main">
+      <article>
+        <h1 style="text-align: centre">Payment Details</h1>
+        <div style="background-color: lightgrey; width: 70%; margin: auto; padding: 2em">
+          <form method="GET" action="/invoice.html" onsubmit="storeData()">
+            <div>
+              <span>Title:</span>
+              <input type="text" id="title" />
+              <span>First Name:</span>
+              <input type="text" id="firstName" />
+              <span>Surname:</span>
+              <input type="text" id="surname" />
+            </div>
+            <hr />
+            <div>
+              <span>Number:</span>
+              <input type="text" id="addressNumber" />
+              <span>Street:</span>
+              <input type="text" id="addressStreet" />
+              <span>Country:</span>
+              <input type="text" id="addressCountry" />
+            </div>
+            <div>
+              <span>Postcode:</span>
+              <input type="text" id="addressPostcode" />
+              <span>City:</span>
+              <input type="text" id="addressCity" />
+            </div>
+            <hr />
+            <div>
+              <span>Card Type:</span>
+              <input type="radio" name="card" value="visa" id="visa" checked />
+              <label for="visa">Visa</label>
+              <input type="radio" name="card" value="solo" id="solo" />
+              <label for="solo">Solo</label>
+              <input type="radio" name="card" value="mastercard" id="mastercard" />
+              <label for="mastercard">Mastercard</label>
+              <input type="radio" name="card" value="switch" id="switch" />
+              <label for="switch">Switch</label>
+              <span>Card Number:</span>
+              <input type="number" id="cardNumber"/>
+              <span>Expiry Date:</span>
+              <input type="text" id="expiryMonth" />
+              <input type="text" id="expiryYear"/>
+            </div>
+            <div>
+              <button type="button" onclick="window.location.href='/shop.html'">Cancel</a>
+              <button type="submit">Proceed</button>
+            </div>
+          </form>
+        </div>
+      </article>
+    </div>
+  </body>
+
+  <script>
+
+    function storeData() {
+      // Collect all form data for use in the invoice
+      const formInputs = ["title", "firstName", "surname", "addressNumber", "addressStreet", "addressPostcode", "addressCountry", "addressCity", "cardNumber", "expiryMonth", "expiryYear"];
+      const formData = {};
+      formInputs.forEach((inputId) => {
+        formData[inputId] = document.getElementById(inputId).value;
+      })
+      formData.card = document.querySelector("input[name=card]:checked").value;
+      
+      localStorage.setItem("paymentDetails", JSON.stringify(formData));
+
+      return false;
+    }
+  </script>
+</html>

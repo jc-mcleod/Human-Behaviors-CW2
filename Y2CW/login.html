@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Rentals</title>
+    <link href="/styles/main.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <strong>Movie Rentals</strong>
+    </header>
+    <div id="main">
+      <article>
+        <h1 style="text-align: center">Welcome to Movie Rentals!</h1>
+        <div style="background-color: lightgrey; width: 40%; margin: auto; padding: 1em">
+          <form method="GET" action="/shop.html">
+            <label>Email</label><br />
+            <input type="text" name="email" style="width: 100%" />
+            <br />
+            <br />
+            <label>Password</label><br />
+            <input type="password" name="password" style="width: 100%" />
+            <br />
+            <br />
+            <div style="width: 100%; text-align: center">
+              <button type="submit" name="action" value="login" style="width: 45%">Sign In</button>
+              <button type="submit" name="action" value="login" style="width: 45%">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

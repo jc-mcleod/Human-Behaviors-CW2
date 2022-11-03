@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Rentals</title>
+    <link href="/styles/main.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="main">
+      <nav>
+        <strong>Movie Rentals</strong>
+        <br />
+        <br />
+        Genres:
+        <ul>
+          <li>Adventure</li>
+          <li>Animation</li>
+          <li>Science fiction</li>
+          <li>Comedy</li>
+          <li>Drama</li>
+          <li>Horror</li>
+          <li>Action</li>
+        </ul>
+        <br />
+        <br />
+        <a href="/basket.html"><strong>View Basket</strong></a>
+        <br />
+        <br />
+        <a href="/login.html"><strong>Exit</strong></a>
+      </nav>
+      <article>
+        <h1 id="movie-title"></h1>
+        <strong>Release Date: </strong>
+        <p id="movie-release-date"></p>
+        <strong>Genres: </strong>
+        <p id="movie-genre"></p>
+        <strong>Director: </strong>
+        <p id="movie-director"></p>
+        <strong>Actors: </strong>
+        <p id="movie-actors"></p>
+        <strong>Price per day: </strong>
+        <p id="movie-price"></p>
+        <img id="movie-image" src="" />
+        <p id="movie-description"></p>
+      </article>
+    </div>
+  </body>
+
+  <script src="./js/movies.js"></script>
+  <script>
+    // Takes the ID from the URL and loads all the data into the DOM
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const movieId = parseInt(urlParams.get("id"));
+    const movie = movies.find((movie) => movie.id === movieId);
+
+    document.getElementById("movie-title").textContent = movie.name;
+    document.getElementById("movie-image").src = movie.image;
+    document.getElementById("movie-genre").textContent = movie.genre;
+    document.getElementById("movie-director").textContent = movie.director;
+    document.getElementById("movie-actors").textContent = movie.actors;
+    document.getElementById("movie-description").textContent = movie.description;
+    document.getElementById("movie-release-date").textContent = movie.releaseDate;
+    document.getElementById("movie-price").textContent = movie.price;
+  </script>
+</html>

@@ -1,0 +1,238 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Rentals</title>
+    <link href="/styles/main.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="main">
+      <nav>
+        <strong>Movie Rentals</strong>
+        <br />
+        <br />
+        Genres:
+        <ul>
+          <li>Adventure</li>
+          <li>Animation</li>
+          <li>Science fiction</li>
+          <li>Comedy</li>
+          <li>Drama</li>
+          <li>Horror</li>
+          <li>Action</li>
+        </ul>
+        <br />
+        <br />
+        <a href="/basket.html"><strong>View Basket</strong></a>
+        <br />
+        <button onclick="localStorage.setItem('basket', '[]')">Empty Basket</button>
+        <br />
+        <br />
+        <a href="/login.html"><strong>Exit</strong></a>
+      </nav>
+      <article>
+        <div class="movie">
+          <div>
+            <img src="https://via.placeholder.com/150x150" />
+          </div>
+          <div style="margin: 0 0.75em">
+            <h4 style="margin: 0">Shang-Chi and the Legend of the Ten Rings (2021)</h4>
+            <p>
+              Shang-Chi, the master of unarmed weaponry based Kung Fu, is forced to confront his past after being drawn into the Ten Rings
+              organization.
+            </p>
+          </div>
+          <div>
+            <a href="/movie.html?id=1">View Movie</a><br />
+            <label>Days to rent:</label><br />
+            <input id="days-to-rent-1" value="3" /><br />
+            <button style="width: 100px; height: 50px" onclick="addToBasket(1)">Add to Basket</button>
+          </div>
+        </div>
+        <div class="movie">
+          <div>
+            <img src="https://via.placeholder.com/350x250" />
+          </div>
+          <div style="margin: 0 0.75em">
+            <h4 style="margin: 0">PAW Patrol: The Movie (2021)</h4>
+            <p>Cute dog movie</p>
+          </div>
+          <div>
+            <a href="/movie.html?id=2">View Movie</a><br />
+            <label>Days to rent:</label><br />
+            <input id="days-to-rent-2" value="3" /><br />
+            <button style="width: 100px; height: 50px" onclick="addToBasket(2)">Add to Basket</button>
+          </div>
+        </div>
+        <div class="movie">
+          <div>
+            <img src="https://via.placeholder.com/250x250" />
+          </div>
+          <div style="margin: 0 0.75em">
+            <h4 style="margin: 0">Spider-Man 3 (2007)</h4>
+            <p>
+              A strange black entity from another world bonds with Peter Parker and causes inner turmoil as he contends with new villains,
+              temptations, and revenge.
+            </p>
+          </div>
+          <div>
+            <a href="/movie.html?id=3">View Movie</a><br />
+            <label>Days to rent:</label><br />
+            <input id="days-to-rent-3" value="3" /><br />
+            <button style="width: 100px; height: 50px" onclick="addToBasket(3)">Add to Basket</button>
+          </div>
+        </div>
+        <div class="movie">
+          <div>
+            <img src="https://via.placeholder.com/250x150" />
+          </div>
+          <div style="margin: 0 0.75em">
+            <h4 style="margin: 0">Don't Breathe (2016)</h4>
+            <p>
+              Hoping to walk away with a massive fortune, a trio of thieves break into the house of a blind man who isn't as helpless as he
+              seems.
+            </p>
+          </div>
+          <div>
+            <a href="/movie.html?id=4">View Movie</a><br />
+            <label>Days to rent:</label><br />
+            <input id="days-to-rent-4" value="3" /><br />
+            <button style="width: 100px; height: 50px" onclick="addToBasket(4)">Add to Basket</button>
+          </div>
+        </div>
+        <div class="movie">
+          <div>
+            <img src="https://via.placeholder.com/150x150" />
+          </div>
+          <div style="margin: 0 0.75em">
+            <h4 style="margin: 0">The Dark Knight (2008)</h4>
+            <p>
+              When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest
+              psychological and physical tests of his ability to fight injustice.
+            </p>
+          </div>
+          <div>
+            <a href="/movie.html?id=5">View Movie</a><br />
+            <label>Days to rent:</label><br />
+            <input id="days-to-rent-5" value="3" /><br />
+            <button style="width: 100px; height: 50px" onclick="addToBasket(5)">Add to Basket</button>
+          </div>
+        </div>
+        <div class="movie">
+          <div>
+            <img src="https://via.placeholder.com/150x150" />
+          </div>
+          <div style="margin: 0 0.75em">
+            <h4 style="margin: 0">The Matrix (1999)</h4>
+            <p>
+              When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he
+              knows is the elaborate deception of an evil cyber-intelligence.
+            </p>
+          </div>
+          <div>
+            <a href="/movie.html?id=6">View Movie</a><br />
+            <label>Days to rent:</label><br />
+            <input id="days-to-rent-6" value="3" /><br />
+            <button style="width: 100px; height: 50px" onclick="addToBasket(6)">Add to Basket</button>
+          </div>
+        </div>
+        <div class="movie">
+          <div>
+            <img src="https://via.placeholder.com/250x250" />
+          </div>
+          <div style="margin: 0 0.75em">
+            <h4 style="margin: 0">Demonic (2021)</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae augue finibus, condimentum urna vel, facilisis dui. Proin
+              est ligula, laoreet sit amet accumsan eget, aliquam ut lectus
+            </p>
+          </div>
+          <div>
+            <a href="/movie.html?id=7">View Movie</a><br />
+            <label>Days to rent:</label><br />
+            <input id="days-to-rent-7" value="3" /><br />
+            <button style="width: 100px; height: 50px" onclick="addToBasket(7)">Add to Basket</button>
+          </div>
+        </div>
+        <div class="movie">
+          <div>
+            <img src="https://via.placeholder.com/250x250" />
+          </div>
+          <div style="margin: 0 0.75em">
+            <h4 style="margin: 0">The Power of the Dog (2021)</h4>
+            <p>
+              Charismatic rancher Phil Burbank inspires fear and awe in those around him. When his brother brings home a new wife and her
+              son, Phil torments them until he finds himself exposed to the possibility of love.
+            </p>
+          </div>
+          <div>
+            <a href="/movie.html?id=8">View Movie</a><br />
+            <label>Days to rent:</label><br />
+            <input id="days-to-rent-8" value="3" /><br />
+            <button style="width: 100px; height: 50px" onclick="addToBasket(8)">Add to Basket</button>
+          </div>
+        </div>
+        <div class="movie">
+          <div>
+            <img src="https://via.placeholder.com/250x150" />
+          </div>
+          <div style="margin: 0 0.75em">
+            <h4 style="margin: 0">Spider-Man 2 (2004)</h4>
+            <p>
+              Peter Parker is beset with troubles in his failing personal life as he battles a brilliant scientist named Doctor Otto
+              Octavius.
+            </p>
+          </div>
+          <div>
+            <a href="/movie.html?id=9">View Movie</a><br />
+            <label>Days to rent:</label><br />
+            <input id="days-to-rent-9" value="3" /><br />
+            <button style="width: 100px; height: 50px" onclick="addToBasket(9)">Add to Basket</button>
+          </div>
+        </div>
+        <div class="movie">
+          <div>
+            <img src="https://via.placeholder.com/250x50" />
+          </div>
+          <div style="margin: 0 0.75em">
+            <h4 style="margin: 0">Wrath of Man (2021)</h4>
+            <p>
+              The plot follows H, a cold and mysterious character working at a cash truck company responsible for moving hundreds of
+              millions of dollars around Los Angeles each week.
+            </p>
+          </div>
+          <div>
+            <a href="/movie.html?id=10">View Movie</a><br />
+            <label>Days to rent:</label><br />
+            <input id="days-to-rent-10" value="3" /><br />
+            <button style="width: 100px; height: 50px" onclick="addToBasket(10)">Add to Basket</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <script src="./js/movies.js"></script>
+    <script>
+      function addToBasket(movieId) {
+        // Get the movie from data and add to the basket
+        const movie = movies.find((movie) => movie.id === movieId);
+        if (!movie) return;
+
+        // Get the basket from local storage, or just an empty array if it doesn't exist
+        const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
+
+        // Add the amount of days they want to rent
+        movie.rentDays = parseInt(document.getElementById("days-to-rent-" + movieId).value);
+        basket.push(movie);
+        localStorage.setItem("basket", JSON.stringify(basket));
+      }
+    </script>
+  </body>
+</html>

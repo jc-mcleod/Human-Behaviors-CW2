@@ -51,7 +51,7 @@
         <img id="movie-image" src="" />
         <p id="movie-description"></p>
 		
-		<button style="width: 100px; height: 50px" onclick=result>Add to Basket</button>
+		<button style="width: 100px; height: 50px" onclick="addtoBasket(7)">Add to Basket</button>
       </article>
     </div>
   </body>
@@ -74,10 +74,17 @@
     document.getElementById("movie-price").textContent = movie.price;
 	
 	// Prab - Adding working 'Add to basket' button
-	let text1 = "addToBasket(";
-	let text2 = movieId;
-	let text3 = ")";
-	let result = text1.concat(text2);
-	let result = result.concat(text3);
+	function addToBasket(movieId) {
+        // Get the movie from data and add to the basket
+        const movie = movies.find((movie) => movie.id === movieId);
+        if (!movie) return;
+
+        // Get the basket from local storage, or just an empty array if it doesn't exist
+        const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
+
+        // Add the amount of days they want to rent
+        movie.rentDays = parseInt(document.getElementById("days-to-rent-" + movieId).value);
+        basket.push(movie);
+        localStorage.setItem("basket", JSON.stringify(basket));
   </script>
 </html>

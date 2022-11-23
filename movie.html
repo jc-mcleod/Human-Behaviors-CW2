@@ -67,7 +67,7 @@
     const urlParams = new URLSearchParams(queryString);
     const movieId = parseInt(urlParams.get("id"));
     const movie = movies.find((movie) => movie.id === movieId);
-
+	
     document.getElementById("movie-title").textContent = movie.name;
     document.getElementById("movie-image").src = movie.image;
     document.getElementById("movie-genre").textContent = movie.genre;

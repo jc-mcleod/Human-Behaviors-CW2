@@ -79,13 +79,14 @@
 	
 	// Prab - Adding working 'Add to basket' button
 	function addToBasket() {
-		
+		const movieId2 = parseInt(urlParams.get("id"));
+		const movie2 = movies.find((movie2) => movie2.id === movieId2);
         // Get the basket from local storage, or just an empty array if it doesn't exist
         const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
-		
+
         // Add the amount of days they want to rent
-        movie.rentDays = parseInt(document.getElementById("days-to-rent").value);
-        basket.push(movie);
+        movie2.rentDays = parseInt(document.getElementById("days-to-rent").value);
+        basket.push(movie2);
         localStorage.setItem("basket", JSON.stringify(basket));
 	}
   </script>

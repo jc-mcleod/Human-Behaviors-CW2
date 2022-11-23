@@ -51,7 +51,9 @@
         <img id="movie-image" src="" />
         <p id="movie-description"></p>
 		
-		<button style="width: 100px; height: 50px" onclick="addtoBasket(7)">Add to Basket</button>
+		<label>Days to rent:</label><br />
+        <input id="days-to-rent" value="3" /><br />
+		<button style="width: 100px; height: 50px" onclick="addtoBasket()">Add to Basket</button>
       </article>
     </div>
   </body>
@@ -74,16 +76,14 @@
     document.getElementById("movie-price").textContent = movie.price;
 	
 	// Prab - Adding working 'Add to basket' button
-	function addToBasket(movieId) {
-        // Get the movie from data and add to the basket
-        const movie = movies.find((movie) => movie.id === movieId);
+	function addToBasket() {
         if (!movie) return;
 
         // Get the basket from local storage, or just an empty array if it doesn't exist
         const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
 
         // Add the amount of days they want to rent
-        movie.rentDays = parseInt(document.getElementById("days-to-rent-" + movieId).value);
+        movie.rentDays = parseInt(document.getElementById("days-to-rent").value);
         basket.push(movie);
         localStorage.setItem("basket", JSON.stringify(basket));
   </script>

@@ -48,7 +48,7 @@
         <p id="movie-actors"></p>
         <strong>Price per day: </strong>
         <p id="movie-price"></p>
-        <img id="movie-image" src="http://localhost:8080/images/shang-chi.jpeg" />
+        <img id="movie-image" src="" />
 		<br>
 		<strong>Description: </strong>
         <p id="movie-description"></p>

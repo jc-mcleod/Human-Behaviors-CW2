@@ -32,7 +32,7 @@
             <tbody id="basket"></tbody>
           </table>
           <hr />
-          <div style="text-align: right"><strong>Total Price:</strong> £<span id="total-price"></span></div>
+          <div style="text-align: right"><strong>Total Price:</strong> £<span id="rounded-total-price"></span></div>
           <hr />
           <a href="index.html">Continue Shopping</a>
           <button onclick="localStorage.setItem('basket', '[]'), location.reload();">Clear Basket</button>
@@ -63,7 +63,8 @@
       );
       totalPrice += basketItem.price * basketItem.rentDays;
     });
-
-    document.getElementById("total-price").textContent = totalPrice * 1.2;
+    
+    document.getElementById("rounded-total-price").textContent = totalPrice.toFixed(2);
+  
   </script>
 </html>

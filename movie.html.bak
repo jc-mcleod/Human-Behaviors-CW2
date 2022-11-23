@@ -48,7 +48,7 @@
         <p id="movie-actors"></p>
         <strong>Price per day: </strong>
         <p id="movie-price"></p>
-        <img id="movie-image" src="" />
+        <img id="movie-image" src="http://localhost:8080/images/shang-chi.jpeg" />
 		<br>
 		<strong>Description: </strong>
         <p id="movie-description"></p>
@@ -67,7 +67,7 @@
     const urlParams = new URLSearchParams(queryString);
     const movieId = parseInt(urlParams.get("id"));
     const movie = movies.find((movie) => movie.id === movieId);
-
+	
     document.getElementById("movie-title").textContent = movie.name;
     document.getElementById("movie-image").src = movie.image;
     document.getElementById("movie-genre").textContent = movie.genre;
@@ -79,7 +79,8 @@
 	
 	// Prab - Adding working 'Add to basket' button
 	function addToBasket() {
-		if (!movie) return;
+		const movie2 = movies.find((movie) => movie.id === movieId);
+		if (!movie2) return;
 
         // Get the basket from local storage, or just an empty array if it doesn't exist
         const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
@@ -87,7 +88,7 @@
 
         // Add the amount of days they want to rent
         movie.rentDays = parseInt(document.getElementById("days-to-rent").value);
-        basket.push(movie);
+        basket.push(movie2);
         localStorage.setItem("basket", JSON.stringify(basket));
 	}
   </script>

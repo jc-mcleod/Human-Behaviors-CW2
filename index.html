@@ -32,7 +32,7 @@
 	<input type="text" placeholder="I am looking for...">
 	<br />
         <br />
-        Genres:
+        <h4>Genres: </h4>
         <ul>
           <li>Adventure</li>
           <li>Animation</li>
@@ -50,225 +50,69 @@
         <br />
       </nav>
       <article>
-        <div class="movie">
-          <div>
-            <img src="images/shang-chi.jpeg" />
-          </div>
-          <div style="margin: 0 0.75em">
-            <h4 style="margin: 0">Shang-Chi and the Legend of the Ten Rings (2021)</h4>
-            <p>
-              Shang-Chi, the master of unarmed weaponry based Kung Fu, is forced to confront his past after being drawn into the Ten Rings
-              organization.
-            </p>
-          </div>
-          <div>
-            <a href="movie.html?id=1">View Movie</a><br />
-            <label>Days to rent:</label><br />
-            <select name="day-quantity" id="days-to-rent-1"/><br />
-                <option value="1">1</option>    
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <button style="width: 100px; height: 50px" onclick="addToBasket(1)">Add to Basket</button>
-          </div>
-        </div>
-        <div class="movie">
-          <div>
-            <img src="images/paw-patrol.jpg" />
-          </div>
-          <div style="margin: 0 0.75em">
-            <h4 style="margin: 0">PAW Patrol: The Movie (2021)</h4>
-            <p>
-	    	Ryder and the pups are called to Adventure City to stop Mayor Humdinger from turning the bustling metropolis into a state of chaos.
-	  </p>
-          </div>
-          <div>
-            <a href="movie.html?id=2">View Movie</a><br />
-            <label>Days to rent:</label><br />
-            <select name="day-quantity" id="days-to-rent-2"/><br />
-                <option value="1">1</option>    
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <button style="width: 100px; height: 50px" onclick="addToBasket(2)">Add to Basket</button>
-          </div>
-        </div>
-        <div class="movie">
-          <div>
-            <img src="images/spider-man-3.jpg" />
-          </div>
-          <div style="margin: 0 0.75em">
-            <h4 style="margin: 0">Spider-Man 3 (2007)</h4>
-            <p>
-              A strange black entity from another world bonds with Peter Parker and causes inner turmoil as he contends with new villains,
-              temptations, and revenge.
-            </p>
-          </div>
-          <div>
-            <a href="movie.html?id=3">View Movie</a><br />
-            <label>Days to rent:</label><br />
-            <select name="day-quantity" id="days-to-rent-3"/><br />
-                <option value="1">1</option>    
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <button style="width: 100px; height: 50px" onclick="addToBasket(3)">Add to Basket</button>
-          </div>
-        </div>
-        <div class="movie">
-          <div>
-            <img src="images/dont-breathe.png" />
-          </div>
-          <div style="margin: 0 0.75em">
-            <h4 style="margin: 0">Don't Breathe (2016)</h4>
-            <p>
-              Hoping to walk away with a massive fortune, a trio of thieves break into the house of a blind man who isn't as helpless as he
-              seems.
-            </p>
-          </div>
-          <div>
-            <a href="movie.html?id=4">View Movie</a><br />
-            <label>Days to rent:</label><br />
-            <select name="day-quantity" id="days-to-rent-4"/><br />
-                <option value="1">1</option>    
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <button style="width: 100px; height: 50px" onclick="addToBasket(4)">Add to Basket</button>
-          </div>
-        </div>
-        <div class="movie">
-          <div>
-            <img src="images/the-dark-knight.jpg" />
-          </div>
-          <div style="margin: 0 0.75em">
-            <h4 style="margin: 0">The Dark Knight (2008)</h4>
-            <p>
-              When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest
-              psychological and physical tests of his ability to fight injustice.
-            </p>
-          </div>
-          <div>
-            <a href="movie.html?id=5">View Movie</a><br />
-            <label>Days to rent:</label><br />
-            <select name="day-quantity" id="days-to-rent-5"/><br />
-                <option value="1">1</option>    
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <button style="width: 100px; height: 50px" onclick="addToBasket(5)">Add to Basket</button>
-          </div>
-        </div>
-        <div class="movie">
-          <div>
-            <img src="images/the-matrix.jpg" />
-          </div>
-          <div style="margin: 0 0.75em">
-            <h4 style="margin: 0">The Matrix (1999)</h4>
-            <p>
-              When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he
-              knows is the elaborate deception of an evil cyber-intelligence.
-            </p>
-          </div>
-          <div>
-            <a href="movie.html?id=6">View Movie</a><br />
-            <label>Days to rent:</label><br />
-            <select name="day-quantity" id="days-to-rent-6"/><br />
-                <option value="1">1</option>    
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <button style="width: 100px; height: 50px" onclick="addToBasket(6)">Add to Basket</button>
-          </div>
-        </div>
-        <div class="movie">
-          <div>
-            <img src="images/demonic.jpg" />
-          </div>
-          <div style="margin: 0 0.75em">
-            <h4 style="margin: 0">Demonic (2021)</h4>
-            <p>
-	    A police officer and a psychologist investigate the deaths of five people who were killed while trying to summon ghosts.
-            </p>
-          </div>
-          <div>
-            <a href="movie.html?id=7">View Movie</a><br />
-            <label>Days to rent:</label><br />
-            <select name="day-quantity" id="days-to-rent-7"/><br />
-                <option value="1">1</option>    
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <button style="width: 100px; height: 50px" onclick="addToBasket(7)">Add to Basket</button>
-          </div>
-        </div>
-        <div class="movie">
-          <div>
-            <img src="images/power-of-the-dog.jpg" />
-          </div>
-          <div style="margin: 0 0.75em">
-            <h4 style="margin: 0">The Power of the Dog (2021)</h4>
-            <p>
-              Charismatic rancher Phil Burbank inspires fear and awe in those around him. When his brother brings home a new wife and her
-              son, Phil torments them until he finds himself exposed to the possibility of love.
-            </p>
-          </div>
-          <div>
-            <a href="movie.html?id=8">View Movie</a><br />
-            <label>Days to rent:</label><br />
-            <select name="day-quantity" id="days-to-rent-8"/><br />
-                <option value="1">1</option>    
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <button style="width: 100px; height: 50px" onclick="addToBasket(8)">Add to Basket</button>
-          </div>
-        </div>
-        <div class="movie">
-          <div>
-            <img src="images/spider-man-2.jpg" />
-          </div>
-          <div style="margin: 0 0.75em">
-            <h4 style="margin: 0">Spider-Man 2 (2004)</h4>
-            <p>
-              Peter Parker is beset with troubles in his failing personal life as he battles a brilliant scientist named Doctor Otto
-              Octavius.
-            </p>
-          </div>
-          <div>
-            <a href="movie.html?id=9">View Movie</a><br />
-            <label>Days to rent:</label><br />
-            <select name="day-quantity" id="days-to-rent-9"/><br />
-                <option value="1">1</option>    
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <button style="width: 100px; height: 50px" onclick="addToBasket(9)">Add to Basket</button>
-          </div>
-        </div>
-        <div class="movie">
-          <div>
-            <img src="images/wrath-of-man.jpg" />
-          </div>
-          <div style="margin: 0 0.75em">
-            <h4 style="margin: 0">Wrath of Man (2021)</h4>
-            <p>
-              The plot follows H, a cold and mysterious character working at a cash truck company responsible for moving hundreds of
-              millions of dollars around Los Angeles each week.
-            </p>
-          </div>
-          <div>
-            <a href="movie.html?id=10">View Movie</a><br />
-            <label>Days to rent:</label><br />
-            <select name="day-quantity" id="days-to-rent-10"/><br />
-                <option value="1">1</option>    
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <button style="width: 100px; height: 50px" onclick="addToBasket(10)">Add to Basket</button>
-          </div>
-        </div>
-      </article>
+      <h2 id="title-header">Available to Rent</h2>
+	<div id="movie-grid">
+	  <figure>
+            <a href="movie.html?id=1"><img src="images/shang-chi.jpeg" class="movie-thumbnail"/></a>
+	    <figcaption class="movie-caption">
+              <h4>Shang-Chi and the Legend of the Ten Rings (2021)</h4>
+	    </figcaption> 
+	  </figure>
+    	  <figure> 
+	    <a href="movie.html?id=2"><img src="images/paw-patrol.jpg" class="movie-thumbnail"/></a>
+	    <figcaption class="movie-caption">
+              <h4>PAW Patrol: The Movie (2021)</h4>
+	    </figcaption>
+	  </figure>
+	  <figure>
+	    <a href="movie.html?id=3"><img src="images/spider-man-3.jpg" class="movie-thumbnail"/></a>
+	    <figcaption class="movie-caption">
+	      <h4>Spider-Man 3 (2007)</h4>
+	    </figcaption>
+	  </figure>
+	  <figure>
+	    <a href="movie.html?id=4"><img src="images/dont-breathe.png" class="movie-thumbnail"/></a>
+	    <figcaption class="movie-caption">
+	      <h4>Don't Breathe (2016)</h4>
+	    </figcaption>
+	  </figure>
+	  <figure>
+	    <a href="movie.html?id=5"><img src="images/the-dark-knight.jpg" class="movie-thumbnail"/></a>
+	    <figcaption class="movie-caption">
+              <h4>The Dark Knight (2008)</h4>
+	    </figcaption>
+	  </figure>
+	  <figure>
+	    <a href="movie.html?id=6"><img src="images/the-matrix.jpg" class="movie-thumbnail"/></a>
+	    <figcaption class="movie-caption">
+              <h4>The Matrix (1999)</h4>
+	    </figcaption>
+	  </figure>
+	  <figure>
+	    <a href="movie.html?id=7"><img src="images/demonic.jpg" class="movie-thumbnail"/></a>
+	    <figcaption class="movie-caption">
+	      <h4>Demonic (2021)</h4>
+	    </figcaption>
+	  </figure>
+	  <figure>
+	    <a href="movie.html?id=8"><img src="images/power-of-the-dog.jpg" class="movie-thumbnail"/></a>
+	    <figcaption class="movie-caption">
+	      <h4>The Power of the Dog (2021)</h4>
+	    </figcaption>
+	  </figure>
+          <figure> 
+            <a href="movie.html?id=9"><img src="images/spider-man-2.jpg" class="movie-thumbnail"/></a>
+	    <figcaption class="movie-caption">
+              <h4>Spider-Man 2 (2004)</h4>
+	    </figcaption>
+	  </figure>
+	  <figure>
+	    <a href="movie.html?id=10"><img src="images/wrath-of-man.jpg" class="movie-thumbnail"/></a>
+	    <figcaption class="movie-caption">
+              <h4>Wrath of Man (2021)</h4>
+	    </figcaption>
+	  </div>
+       </article>
     </div>
 
     <script src="./js/movies.js"></script>
@@ -287,5 +131,15 @@
         localStorage.setItem("basket", JSON.stringify(basket));
       }
     </script>
+
+<!-- MOVE BELOW INTO MOVIE PAGE. -->
+	    
+           <!-- <select name="day-quantity" id="days-to-rent-1"/><br />
+                <option value="1">1</option>    
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+	    <button style="width: 100px; height: 50px" onclick="addToBasket(1)">Add to Basket</button>-->
+ 
   </body>
 </html>

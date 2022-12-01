@@ -1,6 +1,6 @@
 
 body {
-    background-image: url("images/rental-movies-cover.jpg");
+    background-image: url("/images/rental-movies-cover.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.95;

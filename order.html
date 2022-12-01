@@ -28,7 +28,7 @@
               <label for="Title">Title:</label>
               <select name="Title" id="Title">
                 <option value="Master">Master</option>
-                <option value="Mr">MR</option>
+                <option value="Mr">Mr</option>
                 <option value="Miss">Miss</option>
                 <option value="Mrs">Mrs</option>
                 <option value="Ms">Ms</option>
@@ -68,8 +68,9 @@
               <span>Card Number:</span>
               <input type="number" id="cardNumber"/>
               <span>Expiry Date:</span>
-              <input type="text" id="expiryMonth" />
-              <input type="text" id="expiryYear"/>
+              <input type="text" id="expiryDate" />
+              <span> CVC:</span>
+              <input type="text" id="cvc"/>
             </div>
             <div>
               <button type="button" onclick="window.location.href='basket.html'">Cancel</a>
@@ -85,7 +86,7 @@
 
     function storeData() {
       // Collect all form data for use in the invoice
-      const formInputs = ["title", "firstName", "surname", "addressNumber", "addressStreet", "addressPostcode", "addressCountry", "addressCity", "cardNumber", "expiryMonth", "expiryYear"];
+      const formInputs = ["title", "firstName", "surname", "addressNumber", "addressStreet", "addressPostcode", "addressCountry", "addressCity", "cardNumber", "expiryDate", "cvc"];
       const formData = {};
       formInputs.forEach((inputId) => {
         formData[inputId] = document.getElementById(inputId).value;

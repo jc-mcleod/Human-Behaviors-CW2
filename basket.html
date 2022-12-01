@@ -1,5 +1,5 @@
 
-<<html lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,66 +13,80 @@
      <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
   </head>
   <body>
-    <div class="horizontal-navbar">
-        <ul>
-            <li class="horizontal-navbar-button">
-                <a href="index.html" class="no-decoration"><img src="images/icons/logo-text-main.png" width=45% height=53% id="clickable-logo"></a>
-            </li>
-            <li class="horizontal-navbar-button">
-                <a href="index.html" id="continue-shopping">Continue Shopping</a>
-            </li>
-            <li class="horizontal-navbar-button">
-                <a href="login.html" id="login-signup">Log in/Sign Up</a>
-            </li>
-        </ul>
+      <div class="horizontal-navbar">
+          <ul>
+              <li class="horizontal-navbar-button">
+                  <a href="index.html" class="no-decoration"><img src="images/icons/logo-text-main.png" width=45% height=53% id="clickable-logo"></a>
+              </li>
+              <li class="horizontal-navbar-button">
+                  <a href="index.html" id="continue-shopping">Continue Shopping</a>
+              </li>
+              <li class="horizontal-navbar-button">
+                  <a href="login.html" id="login-signup">Log in/Sign Up</a>
+              </li>
+          </ul>
+      <div class="cont-bar">
+          <ul>
+              <li
+          </ul>
+      </div>
 
-    </div>
-    <div id="main">
-            
-        <div style="background-color: lightgrey; width: 70%; margin: auto; padding: 2em">
-            <h1 style="text-align: left">Basket</h1>
-            <table style="width: 100%">
-                <thead>
-                    <tr>
-                        <th>Movie</th>
-                        <th>Time</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody id="basket"></tbody>
-            </table>
-            <hr />
-            <div style="text-align: right"><strong>Total Price:</strong> £<span id="rounded-total-price"></span></div>
-            <hr />
-            <button onclick="localStorage.setItem('basket', '[]'), location.reload();">Clear Basket</button>
-            <a href="order.html">Go to payment details</a>
-        </div>
-    </div>
-</body>
+      </div>
+      <div id="main">
 
-<script src="js/movies.js"></script>
-<script>
-    const basketContainer = document.getElementById("basket");
+          <div style="background-color: lightgrey; width: 70%; margin: auto; padding: 2em">
+              <h1 style="text-align: left">Basket</h1>
+              <img class=basket scr="images/icons/basket.png">
+              <table style="width: 100%">
+                  <thead>
+                      <tr>
+                          <th></th>
+                          <th>Time</th>
+                          <th>Price</th>
+                      </tr>
+                  </thead>
+                  <tbody id="basket"></tbody>
+              </table>
+              <hr />
+              <div style="text-align: right; font-size:20px"><strong>Total:</strong> £<span id="rounded-total-price"></span></div>
+              <hr />
+              <!--<button onclick="localStorage.setItem('basket', '[]'), location.reload();">Clear Basket</button>-->
+              <a class="checkout-btn" href="order.html">Continue</a>
+          </div>
+      </div>
+      <script src="js/movies.js"></script>
+      <script>
+        const basketContainer = document.getElementById("basket");
 
-    const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
+        const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
+        let totalPrice = 0.0;
 
-    let totalPrice = 0.0;
+        basket.forEach((basketItem) => {
+            basketContainer.insertAdjacentHTML(
+            "beforeend",
+            `
+            <tr>
+            <td>
 
-    basket.forEach((basketItem) => {
-    basketContainer.insertAdjacentHTML(
-    "beforeend",
-    `
-    <tr>
-    <td>${basketItem.name}</td>
-    <td>${basketItem.rentDays}</td>
-    <td>${(basketItem.price * basketItem.rentDays).toFixed(2)}</td>
-    </tr>
-    `
-    );
-    totalPrice += basketItem.price * basketItem.rentDays;
-    });
+                <a class=movie-caption href="movie.html?id=${basketItem.id}">
+                    <img class=movie-thumbnail  src=${basketItem.image} width= "100" hieght="150">
+                    <p>${basketItem.name}</p>
+                    <p style="font-size:11px">${basketItem.year}</p>
+                </a>
+               
+            </td>
+            <td>${basketItem.rentDays} days</td>
+            <td>£${(basketItem.price * basketItem.rentDays).toFixed(2)}</td>
+            </tr>
+            `
+            );
+            totalPrice += basketItem.price * basketItem.rentDays;
+        });
 
-    document.getElementById("rounded-total-price").textContent = totalPrice.toFixed(2);
+        document.getElementById("rounded-total-price").textContent = totalPrice.toFixed(2);
 
-</script>
+      </script>
+  </body>
+
+
 </html>

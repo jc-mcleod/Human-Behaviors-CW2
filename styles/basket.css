@@ -5,9 +5,12 @@
 }
 
 .movie-thumbnail {
-  width: 250px;
-  height: 370px;
+  width: 100px;
+  height: 150px;
   -webkit-filter: brightness(100%);
+  vertical-align:middle;
+  align-items:center;
+  float:left;
 }
 
 .movie-thumbnail:hover {
@@ -31,13 +34,33 @@
   list-style: none;
 }
 
+.cont-bar > ul {
+    margin: 0;
+    padding: 5;
+    overflow: hidden;
+    background-color: dimgrey;
+    position: fixed;
+    top: -30;
+    width: 100%;
+    z-index: 99 !important;
+    list-style: none;
+}
 #title-header {
   position: relative;
   top: 22px;
   left: 15px;
 }
 .movie-caption {
-  width: 200px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    align-items:center;
+
+}
+    .movie-caption:hover {
+        color:gray
+    }
+.movie-caption p {
 }
 
 #movie-grid {
@@ -61,12 +84,10 @@
   left: 20;
 }
 
-#clickable-basket {
+#basket {
   height: 30px;
   width: 30px;
-  position: fixed;
-  right: 40px;
-  top: 11px;
+  position: relative;
 }
 
 #login-signup {
@@ -98,11 +119,35 @@
   color: initial;
 }
 
+/*https://www.w3schools.com/howto/howto_css_checkout_form.asp*/
+.checkout-btn {
+    background-color: green;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 20%;
+    float:right;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+    text-decoration:none
+}
+    .checkout-btn:hover {
+        background-color: darkgreen;
+        transition: all 0.3s ease;
+    }
+
+
 .movie {
   display: flex;
   padding: 10px;
 }
 
+.desc-mini{
+    white-space: pre-line;
+    font-size:20px;
+}
 .add-to-basket {
   width: 100px;
   height: 40px;

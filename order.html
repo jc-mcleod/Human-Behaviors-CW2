@@ -25,7 +25,15 @@
           <form method="GET" action="invoice.html" onsubmit="storeData()">
             <div>
               <span>Title:</span>
-              <input type="text" id="title" />
+              <label for="Title">Title:</label>
+              <select name="titles" id="title">
+                <option value="Master">Master</option>
+                <option value="Mr">MR</option>
+                <option value="Miss">Miss</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Ms">Ms</option>
+                <option value="Mx">Mx</option>
+              </select>
               <span>First Name:</span>
               <input type="text" id="firstName" />
               <span>Surname:</span>

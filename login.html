@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="styles/login.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,7 +13,7 @@
   </head>
 
   <!--Core Functionality - includes 3 (div) sections: Sign-Up, Sign-In & Overlap Container-->
-
+<body>
   <!--Sign Up Container-->
   <div class="container" id="container"> <!--Main Div has a Class & ID of "container" to target element using JS-->
     <div class="form-container sign-up-container">
@@ -27,7 +28,7 @@
         <input type="text" placeholder="Name" />
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
-        <button>Sign Up</button>
+        <button><a style = "color: white" href="index.html">Sign Up</button></a>
       </form>
     </div>
 
@@ -38,7 +39,7 @@
         <input type="email" placeholder="Email"/>
         <input type="password" placeholder="password"/>
         <a href="#">Forgot your password?</a>
-        <button>Sign In</button>
+        <button><a style = "color: white" href="index.html">Sign In</button></a>
       </form>
     </div>
 
@@ -55,7 +56,7 @@
           <div class="overlay-panel overlay-right">
               <h1>Hello, Friend!</h1>
               <p>Enter your personal details and start watching with us</p>
-              <button class="ghost" id="signUp">Sign Up</button> <!--ID reference used in JS file for animation-->
+              <button class="ghost" id="signUp">Sign Up</button><!--ID reference used in JS file for animation-->
           </div>
       </div>
     </div>
@@ -73,5 +74,5 @@
       container.classList.remove('right-panel-active');
     });
   </script>
-
+</body>
 </html>

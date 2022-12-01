@@ -4,22 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Rentals</title>
     <link href="styles/login.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
   </head>
 
   <!--Core Functionality - includes 3 (div) sections: Sign-Up, Sign-In & Overlap Container-->
 
   <!--Sign Up Container-->
-<body>
-  <script src="/js/login.js"></script>
   <div class="container" id="container"> <!--Main Div has a Class & ID of "container" to target element using JS-->
     <div class="form-container sign-up-container">
       <form action="#">
@@ -29,11 +22,11 @@
           <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
           <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <span>or register with email</span>
-        <input type="text" placeholder="Name"/>
-        <input type="email" placeholder="Email"/>
-        <input type="password" placeholder="Password"/>
-        <button>Sign-Up</button>
+        <span>or use your email for registration</span>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button>Sign Up</button>
       </form>
     </div>
 
@@ -48,7 +41,7 @@
       </form>
     </div>
 
-    <!--Sign-Up Container-->
+    <!--overlap Container-->
       <div class="overlay-container">
       <div class="overlay">
           <div class="overlay-panel overlay-left">
@@ -66,5 +59,17 @@
       </div>
     </div>
   </div>
-</body>
+  <script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+      container.classList.add('right-panel-active');
+    });
+
+    signInButton.addEventListener('click', () => {
+      container.classList.remove('right-panel-active');
+    });
+  </script>
 </html>

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Rentals</title>
     <link href="styles/login.css" rel="stylesheet" />
-    <script src="js/login.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,35 +15,56 @@
     <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
   </head>
 
-  <body>
-    <!--Core Functionality - includes 3 (div) sections: Sign-Up, Sign-In & Overlap Container-->
-    <div class="container" id="container"> <!--Main Div has a Class & ID of "container" to target element using JS-->
-      <div class="sign-up_container">
-        <form action="#">
-          <h1>Create Account</h1>
-          <div class="social-container">
-            <a href="#" class="social"><i class="fab-facebook"></i></a>
-            <a href="#" class="social"><i class="fab-google"></i></a>
-            <a href="#" class="social"><i class="fab-linkedin"></i></a>
+  <!--Core Functionality - includes 3 (div) sections: Sign-Up, Sign-In & Overlap Container-->
+
+  <!--Sign Up Container-->
+<body>
+  <script src="/js/login.js"></script>
+  <div class="container" id="container"> <!--Main Div has a Class & ID of "container" to target element using JS-->
+    <div class="form-container sign-up-container">
+      <form action="#">
+        <h1>Create Account</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>or register with email</span>
+        <input type="text" placeholder="Name"/>
+        <input type="email" placeholder="Email"/>
+        <input type="password" placeholder="Password"/>
+        <button>Sign-Up</button>
+      </form>
+    </div>
+
+    <!--Sign-In Container-->
+    <div class="form-container sign-in-container">
+    <form action="#">
+        <h1>Sign-In</h1>
+        <input type="email" placeholder="Email"/>
+        <input type="password" placeholder="password"/>
+        <a href="#">Forgot your password?</a>
+        <button>Sign In</button>
+      </form>
+    </div>
+
+    <!--Sign-Up Container-->
+      <div class="overlay-container">
+      <div class="overlay">
+          <div class="overlay-panel overlay-left">
+              <h1>Welcome Back!</h1>
+              <p>
+                  To keep entretained with us please login with your personal info
+              </p>
+              <button class="ghost" id="signIn">Sign In</button> <!--ID reference used in JS file for animation-->
           </div>
-          <span>or register with email</span>
-          <input type="text" placeholder="Name"/>
-          <input type="email" placeholder="Email"/>
-          <input type="password" placeholder="Password"/>
-          <button>Sign-Up</button>
-        </form>
-      </div>
-      <div class="sign-in_container">
-        <!-- Begin of Sign-In code-->
-        <form action="#">
-          <h1>Sign-In</h1>
-          <input type="email" placeholder="Email"/>
-          <input type="password" placeholder="password"/>
-          <a href="#">Forgot your password?</a>
-          <button>Sign In</button>
-        </form>
-      </div>
+          <div class="overlay-panel overlay-right">
+              <h1>Hello, Friend!</h1>
+              <p>Enter your personal details and start watching with us</p>
+              <button class="ghost" id="signUp">Sign Up</button> <!--ID reference used in JS file for animation-->
+          </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>

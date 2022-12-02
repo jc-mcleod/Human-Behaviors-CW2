@@ -33,17 +33,16 @@
   z-index: 99 !important;
   list-style: none;
 }
-
-.cont-bar > ul {
-    margin: 0;
-    padding: 5;
-    overflow: hidden;
-    background-color: dimgrey;
-    position: fixed;
-    top: -30;
-    width: 100%;
-    z-index: 99 !important;
-    list-style: none;
+.navbar2 > ul {
+  margin: 0;
+  padding: 10;
+  overflow: hidden;
+  background-color: #606060;
+  position: fixed;
+  top: -30;
+  width: 100%;
+  z-index: 99 !important;
+  list-style: none;
 }
 #title-header {
   position: relative;

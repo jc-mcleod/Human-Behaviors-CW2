@@ -70,7 +70,7 @@
 	
 	<label> Days to rent:</label><br />
         <input id="days-to-rent" value="3" /><br />
-	<button style="width: 100px; height: 50px" onclick="addToBasket()">Add to Basket</button>
+	<button style="width: 100px; height: 50px" onclick="addToBasket()" >Add to Basket</button>
       
        
       </article>
@@ -99,12 +99,38 @@
 		const movieId2 = parseInt(urlParams.get("id"));
 		const movie2 = movies.find((movie2) => movie2.id === movieId2);
         // Get the basket from local storage, or just an empty array if it doesn't exist
-        	const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
+        const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
 
-        // Add the amount of days they want to rent
-       	movie2.rentDays = parseInt(document.getElementById("days-to-rent").value);
-        	basket.push(movie2);
-        	localStorage.setItem("basket", JSON.stringify(basket));
+        // Check if movie is in basket
+        var new_bask = true;
+        var index = 0;
+        basket.forEach((i) => {
+            if (i.id == movieId2) {
+                new_bask = false;
+                return;
+            }
+            ++index;
+        });
+
+        
+        var max_rent=365
+        var rent_to_add = parseInt(document.getElementById("days-to-rent").value)
+        //Add movie to basket if it is not there already
+        if (new_bask == true && rent_to_add <= max_rent) {
+            movie2.rentDays = rent_to_add;
+            basket.push(movie2);
+            window.alert("Added to Basket")
+        // Add on rent days to basket if movie is already in basket
+        } else if (new_bask == false && basket[index].rentDays + rent_to_add <= max_rent) {
+            basket[index].rentDays += rent_to_add;
+            window.alert("Updated Basket")
+        //Notify user that they cannot rent a movie more than specified number of days
+        } else {
+            window.alert("Maximum number of days you can rent is "+ max_rent);
+        }
+        
+
+        localStorage.setItem("basket", JSON.stringify(basket));
 	}
   </script>
 </html>

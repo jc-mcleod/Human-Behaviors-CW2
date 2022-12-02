@@ -25,12 +25,14 @@
                   <a href="login.html" id="login-signup">Log in/Sign Up</a>
               </li>
           </ul>
-      <div class="cont-bar">
-          <ul>
-              <li
-          </ul>
       </div>
-
+      <!--trying to get continue shopping in another bar-->
+      <div class="navbar2">
+          <ul>
+              <li class="horizontal-navbar-button">
+                  <a href="index.html" class="no-decoration">test</a>
+              </li>
+          </ul>
       </div>
       <div id="main">
 
@@ -38,7 +40,7 @@
               <h1 style="text-align: left">Basket</h1>
               <img class=basket scr="images/icons/basket.png">
               <table style="width: 100%">
-                  <thead>
+                  <thead style="text-align: center">
                       <tr>
                           <th></th>
                           <th>Time</th>
@@ -50,40 +52,59 @@
               <hr />
               <div style="text-align: right; font-size:20px"><strong>Total:</strong> £<span id="rounded-total-price"></span></div>
               <hr />
-              <!--<button onclick="localStorage.setItem('basket', '[]'), location.reload();">Clear Basket</button>-->
               <a class="checkout-btn" href="order.html">Continue</a>
           </div>
       </div>
       <script src="js/movies.js"></script>
       <script>
-        const basketContainer = document.getElementById("basket");
+          function removeFromBasket(id) {
+              const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
+              basket.splice(id, 1);
+              localStorage.setItem("basket", JSON.stringify(basket));
+              location.reload();
+          }
+          const basketContainer = document.getElementById("basket");
 
-        const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
-        let totalPrice = 0.0;
+          const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
+          
+          let totalPrice = 0.0;
+          var count = 0;
+          if (basket.length > 0) {
+              basket.forEach((basketItem) => {
+                  basketContainer.insertAdjacentHTML(
+                      "beforeend",
+                      `
+                  <tr>
+                  <td>
 
-        basket.forEach((basketItem) => {
-            basketContainer.insertAdjacentHTML(
-            "beforeend",
-            `
-            <tr>
-            <td>
+                      <a class=movie-caption href="movie.html?id=${basketItem.id}">
+                          <img class=movie-thumbnail  src=${basketItem.image} width= "100" hieght="150">
+                          <p>${basketItem.name}</p>
+                          <p style="font-size:11px">${basketItem.year}</p>
+                      </a>
 
-                <a class=movie-caption href="movie.html?id=${basketItem.id}">
-                    <img class=movie-thumbnail  src=${basketItem.image} width= "100" hieght="150">
-                    <p>${basketItem.name}</p>
-                    <p style="font-size:11px">${basketItem.year}</p>
-                </a>
-               
-            </td>
-            <td>${basketItem.rentDays} days</td>
-            <td>£${(basketItem.price * basketItem.rentDays).toFixed(2)}</td>
-            </tr>
-            `
-            );
-            totalPrice += basketItem.price * basketItem.rentDays;
-        });
+                  </td>
+                  <td>${basketItem.rentDays} days</td>
+                  <td>£${(basketItem.price * basketItem.rentDays).toFixed(2)}</td>
+                  <td style="color:red"> 
+                        <button onclick=removeFromBasket(${count})>Remove</button> <td>
+                  </tr>
+                  `
+                  );
+                  totalPrice += basketItem.price * basketItem.rentDays;
+                  count++;
+              });
+          } else {
+              basketContainer.insertAdjacentHTML(
+                  "beforeend",
+                  `
+                       <b style="font-size:20px; ">Basket Empty </b>
+                        <br></br>
+                       <a href="index.html" style="font-weight:bold; color:blue; text-decoration:none" >Shop For Movies</a>
+                  `);
+          }
 
-        document.getElementById("rounded-total-price").textContent = totalPrice.toFixed(2);
+          document.getElementById("rounded-total-price").textContent = totalPrice.toFixed(2);
 
       </script>
   </body>

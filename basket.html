@@ -57,12 +57,6 @@
       </div>
       <script src="js/movies.js"></script>
       <script>
-          function removeFromBasket(id) {
-              const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
-              basket.splice(id, 1);
-              localStorage.setItem("basket", JSON.stringify(basket));
-              location.reload();
-          }
           const basketContainer = document.getElementById("basket");
 
           const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");

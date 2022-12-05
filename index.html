@@ -33,74 +33,74 @@
       </ul>
       <div class="genre-navbar">
 	<center>
-          <button>Adventure</button>
-          <button>Animation</button>
-          <button>Science fiction</button>
-          <button>Comedy</button>
-          <button>Drama</button>
-          <button>Horror</button>
-          <button>Action</button>
+          <button id="cat-adventure">Adventure</button>
+          <button id="cat-animation">Animation</button>
+          <button id="cat-scifi">Science fiction</button>
+          <button id="cat-comedy">Comedy</button>
+          <button id="cat-drama">Drama</button>
+          <button id="cat-horror">Horror</button>
+          <button id="cat-action">Action</button>
        </center>
     </div>
     <div id="main">
      <article>
       <h2 id="title-header">Available to Rent</h2>
 	<div id="movie-grid">
-	  <div class="movie" data-tags="Shang-Chi and the Legend of the Ten Rings (2021)">
+	  <div class="movie" data-tags="Shang-Chi and the Legend of the Ten Rings (2021) (action,adventure,fantasy)">
             <a href="movie.html?id=1"><img src="images/shang-chi.jpeg" class="movie-thumbnail"/></a>
 	    <div class="movie-caption">
               <h4 class="movie-caption-content">Shang-Chi and the Legend of the Ten Rings (2021)</h4>
 	    </div> 
 	  </div>
-    	  <div class="movie" data-tags="PAW Patrol: The Movie (2021)"> 
+    	  <div class="movie" data-tags="PAW Patrol: The Movie (2021) (animation,adventure,comedy)"> 
 	    <a href="movie.html?id=2"><img src="images/paw-patrol.jpg" class="movie-thumbnail"/></a>
 	    <div class="movie-caption">
               <h4>PAW Patrol: The Movie (2021)</h4>
 	    </div>
 	  </div>
-	  <div class="movie" data-tags="Spider-Man 3 (2007)">
+	  <div class="movie" data-tags="Spider-Man 3 (2007) (action,adventure,science fiction)">
 	    <a href="movie.html?id=3"><img src="images/spider-man-3.jpg" class="movie-thumbnail"/></a>
 	    <div class="movie-caption">
 	      <h4>Spider-Man 3 (2007)</h4>
 	    </div>
 	  </div>
-	  <div class="movie" data-tags="Don't Breathe (2016)">
+	  <div class="movie" data-tags="Don't Breathe (2016) (crime,horror,thriller)">
 	    <a href="movie.html?id=4"><img src="images/dont-breathe.png" class="movie-thumbnail"/></a>
 	    <div class="movie-caption">
 	      <h4>Don't Breathe (2016)</h4>
 	    </div>
 	  </div>
-	  <div class="movie" data-tags="The Dark Knight (2008)">
+	  <div class="movie" data-tags="The Dark Knight (2008) (action,crime,drama)">
 	    <a href="movie.html?id=5"><img src="images/the-dark-knight.jpg" class="movie-thumbnail"/></a>
 	    <div class="movie-caption" data-tags="The Dark Knight (2008)">
               <h4>The Dark Knight (2008)</h4>
 	    </div>
 	  </div>
-	  <div class="movie" data-tags="The Matrix (1999)">
+	  <div class="movie" data-tags="The Matrix (1999) (action,science fiction)">
 	    <a href="movie.html?id=6"><img src="images/the-matrix.jpg" class="movie-thumbnail"/></a>
 	    <div class="movie-caption">
               <h4>The Matrix (1999)</h4>
 	    </div>
 	  </div>
-	  <div class="movie" data-tags="Demonic (2021)">
+	  <div class="movie" data-tags="Demonic (2021) (horror)">
 	    <a href="movie.html?id=7"><img src="images/demonic.jpg" class="movie-thumbnail"/></a>
 	    <div class="movie-caption">
 	      <h4>Demonic (2021)</h4>
 	    </div>
 	  </div>
-	  <div class="movie" data-tags="The Power of the Dog (2021)">
+	  <div class="movie" data-tags="The Power of the Dog (2021) (drama,romance,western)">
 	    <a href="movie.html?id=8"><img src="images/power-of-the-dog.jpg" class="movie-thumbnail"/></a>
 	    <div class="movie-caption">
 	      <h4>The Power of the Dog (2021)</h4>
 	    </div>
 	  </div>
-          <div class="movie" data-tags="Spider-Man 2 (2004)"> 
+          <div class="movie" data-tags="Spider-Man 2 (2004) (action,adventure,science fiction)"> 
             <a href="movie.html?id=9"><img src="images/spider-man-2.jpg" class="movie-thumbnail"/></a>
 	    <div class="movie-caption">
               <h4>Spider-Man 2 (2004)</h4>
 	    </div>
 	  </div>
-	  <div class="movie" data-tags="Wrath of Man (2021)"> 
+	  <div class="movie" data-tags="Wrath of Man (2021) (action,crime,thriller)"> 
 	    <a href="movie.html?id=10"><img src="images/wrath-of-man.jpg" class="movie-thumbnail"/></a>
 	    <div class="movie-caption">
               <h4>Wrath of Man (2021)</h4>
@@ -165,10 +165,46 @@
       movies.forEach(movie => {
       movie.style.display = "flex";
       })
-
       movie_list.classList.remove("list-searched");
+      })
     })
-  })
+
+    const adventureButt = document.getElementById("cat-adventure");
+    const animationButt = document.getElementById("cat-animation");
+    const scifiButt = document.getElementById("cat-scifi");
+    const comedyButt = document.getElementById("cat-comedy");
+    const dramaButt = document.getElementById("cat-drama");
+    const horrorButt = document.getElementById("cat-horror");
+    const actionButt = document.getElementById("cat-action");
+ 
+    adventureButt.addEventListener("click", () => {
+      search.value = "Adventure";
+      search.dispatchEvent(new Event('input'));
+    })
+    animationButt.addEventListener("click", () => {
+      search.value = "Animation";
+      search.dispatchEvent(new Event('input'));
+    })
+    scifiButt.addEventListener("click", () => {
+      search.value = "Science Fiction";
+      search.dispatchEvent(new Event('input'));
+    })
+    comedyButt.addEventListener("click", () => {
+      search.value = "Comedy";
+      search.dispatchEvent(new Event('input'));
+    })
+    dramaButt.addEventListener("click", () => {
+      search.value = "Drama";
+      search.dispatchEvent(new Event('input'));
+    })
+    horrorButt.addEventListener("click", () => {
+      search.value = "Horror";
+      search.dispatchEvent(new Event('input'));
+    })
+    actionButt.addEventListener("click", () => {
+      search.value = "Action";
+      search.dispatchEvent(new Event('input'));
+    })
   </script>
 
 <!-- MOVE BELOW INTO MOVIE PAGE. -->

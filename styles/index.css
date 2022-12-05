@@ -65,7 +65,7 @@
   left: 1px;
 }
 .movie-caption {
-  width: 200px;
+  width: 260px;
 }
 
 #movie-grid {
@@ -148,7 +148,7 @@ body {
 #main > article {
   flex: 1;
   position: relative;
-  left: 1px;
+  left: 5px;
   top: 60px;
 }
 #main > nav,

@@ -36,8 +36,11 @@
       </div>
       <div id="main">
 
-          <div style="background-color: lightgrey; width: 70%; margin: auto; padding: 2em">
-              <h1 style="text-align: left">Basket</h1>
+          <div style="background-color: lightgrey; width: 70%; margin: auto; margin-top:30px; padding: 2em">
+              <h1 style="text-align: left">Basket <a class="checkout-btn" href="order.html" style="text-align:center">Continue to Checkout</a></h1>
+              <hr />
+              <div style="text-align: right; font-size:20px"><strong>Total<span id="basket-length"></span><span id="basket-multiple"></span>:</strong> £<span id="rounded-total-price"></span></div>
+              <hr />
               <img class=basket scr="images/icons/basket.png">
               <table style="width: 100%">
                   <thead style="text-align: center">
@@ -50,9 +53,9 @@
                   <tbody id="basket"></tbody>
               </table>
               <hr />
-              <div style="text-align: right; font-size:20px"><strong>Total<span id="basket-length"></span><span id="basket-multiple"></span>:</strong> £<span id="rounded-total-price"></span></div>
+              <div style="text-align: right; font-size:20px"><strong>Total<span id="basket-length2"></span><span id="basket-multiple2"></span>:</strong> £<span id="rounded-total-price2"></span></div>
               <hr />
-              <a class="checkout-btn" href="order.html">Continue</a>
+              <a class="checkout-btn" href="order.html" style="text-align:center">Continue to Checkout</a>
           </div>
       </div>
       <script src="js/movies.js"></script>
@@ -74,8 +77,8 @@
                       <a class=movie-caption href="movie.html?id=${basketItem.id}">
                           <img class=movie-thumbnail  src=${basketItem.image} width= "100" hieght="150">
                           <p>${basketItem.name}</p>
-                          <p style="font-size:11px; line-height:1">${basketItem.year}</p>
-                          <p style="font-size:11px; line-height:1">£${(basketItem.price).toFixed(2) } per day</p>
+                          <p style="font-size:16px; line-height:1">${basketItem.year}</p>
+                          <p style="font-size:16px; line-height:1">£${(basketItem.price).toFixed(2) } per day</p>
                       </a>
 
                   </td>
@@ -86,7 +89,7 @@
                         <button style="width: 60px; height: 30px" onclick="addToBasket(${basketItem.id},'b');location.reload();" >Update</button></td> </p>
                   <td>£${(basketItem.price * basketItem.rentDays).toFixed(2)}</td>
                   <td style="color:red"> 
-                        <button onclick=removeFromBasket(${count})>Remove</button> <td>
+                        <button onclick="if (confirm('This will remove the item from the basket.') == true) {removeFromBasket(${count});}">Remove</button> <td>
                   </tr>
                   `
                   );
@@ -94,10 +97,13 @@
                   count++;
               });
               document.getElementById("basket-length").textContent = " (" + basket.length;
+              document.getElementById("basket-length2").textContent = " (" + basket.length;
               if (basket.length == 1) {
                   document.getElementById("basket-multiple").textContent = " Item)";
+                  document.getElementById("basket-multiple2").textContent = " Item)";
               } else {
                   document.getElementById("basket-multiple").textContent = " Items)";
+                  document.getElementById("basket-multiple2").textContent = " Items)";
               }
           } else {
               basketContainer.insertAdjacentHTML(
@@ -110,7 +116,7 @@
           }
 
           document.getElementById("rounded-total-price").textContent = totalPrice.toFixed(2);
-
+          document.getElementById("rounded-total-price2").textContent = totalPrice.toFixed(2);
       </script>
   </body>
 

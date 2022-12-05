@@ -1,5 +1,8 @@
 /* The contents of this file are intended to be merged with main.css once the website is complete; it exists only to avoid conflicts. */
-
+p {
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
 .no-decoration {
   text-decoration: none;
 }
@@ -101,9 +104,11 @@
     left: 170px;
     top: 17px;
     text-decoration: none;
-    color: black;
+    color: white;
 }
-
+input[type='number'] {
+    width: 50px;
+} 
 .horizontal-navbar-button > a:hover {
 
 }

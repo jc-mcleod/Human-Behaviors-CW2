@@ -50,7 +50,7 @@
                   <tbody id="basket"></tbody>
               </table>
               <hr />
-              <div style="text-align: right; font-size:20px"><strong>Total:</strong> £<span id="rounded-total-price"></span></div>
+              <div style="text-align: right; font-size:20px"><strong>Total<span id="basket-length"></span><span id="basket-multiple"></span>:</strong> £<span id="rounded-total-price"></span></div>
               <hr />
               <a class="checkout-btn" href="order.html">Continue</a>
           </div>
@@ -80,11 +80,16 @@
                       <a class=movie-caption href="movie.html?id=${basketItem.id}">
                           <img class=movie-thumbnail  src=${basketItem.image} width= "100" hieght="150">
                           <p>${basketItem.name}</p>
-                          <p style="font-size:11px">${basketItem.year}</p>
+                          <p style="font-size:11px; line-height:1">${basketItem.year}</p>
+                          <p style="font-size:11px; line-height:1">£${(basketItem.price).toFixed(2) }</p>
                       </a>
 
                   </td>
-                  <td>${basketItem.rentDays} days</td>
+                  <td> 
+                        <p style="line-height:3">
+                        <input id="days-to-rent${basketItem.id}" type="number" min="0" step="1" value="${basketItem.rentDays}"/>days </p>
+                        <p>
+                        <button style="width: 60px; height: 30px" onclick="addToBasket(${basketItem.id},'b');location.reload();" >Update</button></td> </p>
                   <td>£${(basketItem.price * basketItem.rentDays).toFixed(2)}</td>
                   <td style="color:red"> 
                         <button onclick=removeFromBasket(${count})>Remove</button> <td>
@@ -94,6 +99,12 @@
                   totalPrice += basketItem.price * basketItem.rentDays;
                   count++;
               });
+              document.getElementById("basket-length").textContent = " (" + basket.length;
+              if (basket.length == 1) {
+                  document.getElementById("basket-multiple").textContent = " Item)";
+              } else {
+                  document.getElementById("basket-multiple").textContent = " Items)";
+              }
           } else {
               basketContainer.insertAdjacentHTML(
                   "beforeend",
@@ -109,5 +120,11 @@
       </script>
   </body>
 
+  <script src="./js/addToBasket.js"></script>
+  <!--<script>
+      function addReload(id) {
+          addToBasket(id)
 
+      }
+  </script>-->
 </html>

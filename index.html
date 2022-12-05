@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
       rel="stylesheet"/>
-     <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
   </head>
   <body>
     <div class="horizontal-navbar">
@@ -28,10 +28,13 @@
     </div>
     <div id="main">
     <nav>
-	<p><strong>Search:</strong></p>
-	<input type="text" placeholder="I am looking for...">
+	<div class="search-wrapper">
+          <label for="search"><strong>Search: </strong></label>
+	  <br/>
+	  <input type="search" id="search" placeholder="I am looking for...">
+          <button id="clear-search">Clear</button>
+	</div>
 	<br />
-        <br />
         <h4>Genres: </h4>
         <ul>
           <li>Adventure</li>
@@ -52,65 +55,65 @@
       <article>
       <h2 id="title-header">Available to Rent</h2>
 	<div id="movie-grid">
-	  <figure>
+	  <div class="movie" data-tags="Shang-Chi and the Legend of the Ten Rings (2021)">
             <a href="movie.html?id=1"><img src="images/shang-chi.jpeg" class="movie-thumbnail"/></a>
-	    <figcaption class="movie-caption">
-              <h4>Shang-Chi and the Legend of the Ten Rings (2021)</h4>
-	    </figcaption> 
-	  </figure>
-    	  <figure> 
+	    <div class="movie-caption">
+              <h4 class="movie-caption-content">Shang-Chi and the Legend of the Ten Rings (2021)</h4>
+	    </div> 
+	  </div>
+    	  <div class="movie" data-tags="PAW Patrol: The Movie (2021)"> 
 	    <a href="movie.html?id=2"><img src="images/paw-patrol.jpg" class="movie-thumbnail"/></a>
-	    <figcaption class="movie-caption">
+	    <div class="movie-caption">
               <h4>PAW Patrol: The Movie (2021)</h4>
-	    </figcaption>
-	  </figure>
-	  <figure>
+	    </div>
+	  </div>
+	  <div class="movie" data-tags="Spider-Man 3 (2007)">
 	    <a href="movie.html?id=3"><img src="images/spider-man-3.jpg" class="movie-thumbnail"/></a>
-	    <figcaption class="movie-caption">
+	    <div class="movie-caption">
 	      <h4>Spider-Man 3 (2007)</h4>
-	    </figcaption>
-	  </figure>
-	  <figure>
+	    </div>
+	  </div>
+	  <div class="movie" data-tags="Don't Breathe (2016)">
 	    <a href="movie.html?id=4"><img src="images/dont-breathe.png" class="movie-thumbnail"/></a>
-	    <figcaption class="movie-caption">
+	    <div class="movie-caption">
 	      <h4>Don't Breathe (2016)</h4>
-	    </figcaption>
-	  </figure>
-	  <figure>
+	    </div>
+	  </div>
+	  <div class="movie" data-tags="The Dark Knight (2008)">
 	    <a href="movie.html?id=5"><img src="images/the-dark-knight.jpg" class="movie-thumbnail"/></a>
-	    <figcaption class="movie-caption">
+	    <div class="movie-caption" data-tags="The Dark Knight (2008)">
               <h4>The Dark Knight (2008)</h4>
-	    </figcaption>
-	  </figure>
-	  <figure>
+	    </div>
+	  </div>
+	  <div class="movie" data-tags="The Matrix (1999)">
 	    <a href="movie.html?id=6"><img src="images/the-matrix.jpg" class="movie-thumbnail"/></a>
-	    <figcaption class="movie-caption">
+	    <div class="movie-caption">
               <h4>The Matrix (1999)</h4>
-	    </figcaption>
-	  </figure>
-	  <figure>
+	    </div>
+	  </div>
+	  <div class="movie" data-tags="Demonic (2021)">
 	    <a href="movie.html?id=7"><img src="images/demonic.jpg" class="movie-thumbnail"/></a>
-	    <figcaption class="movie-caption">
+	    <div class="movie-caption">
 	      <h4>Demonic (2021)</h4>
-	    </figcaption>
-	  </figure>
-	  <figure>
+	    </div>
+	  </div>
+	  <div class="movie" data-tags="The Power of the Dog (2021)">
 	    <a href="movie.html?id=8"><img src="images/power-of-the-dog.jpg" class="movie-thumbnail"/></a>
-	    <figcaption class="movie-caption">
+	    <div class="movie-caption">
 	      <h4>The Power of the Dog (2021)</h4>
-	    </figcaption>
-	  </figure>
-          <figure> 
+	    </div>
+	  </div>
+          <div class="movie" data-tags="Spider-Man 2 (2004)"> 
             <a href="movie.html?id=9"><img src="images/spider-man-2.jpg" class="movie-thumbnail"/></a>
-	    <figcaption class="movie-caption">
+	    <div class="movie-caption">
               <h4>Spider-Man 2 (2004)</h4>
-	    </figcaption>
-	  </figure>
-	  <figure>
+	    </div>
+	  </div>
+	  <div class="movie" data-tags="Wrath of Man (2021)"> 
 	    <a href="movie.html?id=10"><img src="images/wrath-of-man.jpg" class="movie-thumbnail"/></a>
-	    <figcaption class="movie-caption">
+	    <div class="movie-caption">
               <h4>Wrath of Man (2021)</h4>
-	    </figcaption>
+	    </div>
 	  </div>
        </article>
     </div>
@@ -131,6 +134,51 @@
         localStorage.setItem("basket", JSON.stringify(basket));
       }
     </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+      for (e of document.getElementsByClassName("js-only")) {
+        e.classList.remove("js-only");
+      }
+
+      const movies = document.querySelectorAll(".movie");
+      const search = document.getElementById("search");
+      const clearSearch = document.getElementById("clear-search");
+      const movie_list = document.getElementById("movie-grid");
+
+      search.addEventListener("input", () => {
+      // grab search input value
+      const searchText = search.value.toLowerCase().trim().normalize('NFD').replace(/\p{Diacritic}/gu, "");
+      const searchTerms = searchText.split(" ");
+      const hasFilter = searchText.length > 0;
+
+      movie_list.classList.toggle("list-searched", hasFilter);
+
+      // for each movie hide all but matched
+      movies.forEach(movie => {
+        const searchString = movie.dataset.tags.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, "");
+        const isMatch = searchTerms.every(term => searchString.includes(term));
+        if (!isMatch)
+        {
+          movie.style.display = "none"; 
+        }
+        else
+        {
+          movie.style.display = "flex";
+        } 
+      })
+    })
+
+    clearSearch.addEventListener("click", () => {
+      search.value = "";
+      movies.forEach(movie => {
+      movie.style.display = "flex";
+      })
+
+      movie_list.classList.remove("list-searched");
+    })
+  })
+  </script>
 
 <!-- MOVE BELOW INTO MOVIE PAGE. -->
 	    

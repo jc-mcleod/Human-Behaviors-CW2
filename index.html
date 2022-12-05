@@ -14,8 +14,15 @@
   <body>
     <div class="horizontal-navbar">
       <ul>
-	    <li class="horizontal-navbar-button">
+	<li class="horizontal-navbar-button">
           <a href="index.html" class="no-decoration"><img src="images/icons/logo-text-main.png" width=45% height=53% id="clickable-logo"></a>
+        </li>
+	<li>
+          <div class="search-wrapper">
+            <label for="search"><strong>Search: </strong></label>
+	    <input type="search" id="search" placeholder="I am looking for...">
+            <button id="clear-search">Clear</button>
+	  </div>
         </li>
 	<li class="horizontal-navbar-button">
           <a href="login.html" id="login-signup">Log in/Sign Up</a>
@@ -24,35 +31,19 @@
           <a href="basket.html"><img src="images/icons/basket.png" id="clickable-basket"></a>
 	</li>
       </ul>
-
+      <div class="genre-navbar">
+	<center>
+          <button>Adventure</button>
+          <button>Animation</button>
+          <button>Science fiction</button>
+          <button>Comedy</button>
+          <button>Drama</button>
+          <button>Horror</button>
+          <button>Action</button>
+       </center>
     </div>
     <div id="main">
-    <nav>
-	<div class="search-wrapper">
-          <label for="search"><strong>Search: </strong></label>
-	  <br/>
-	  <input type="search" id="search" placeholder="I am looking for...">
-          <button id="clear-search">Clear</button>
-	</div>
-	<br />
-        <h4>Genres: </h4>
-        <ul>
-          <li>Adventure</li>
-          <li>Animation</li>
-          <li>Science fiction</li>
-          <li>Comedy</li>
-          <li>Drama</li>
-          <li>Horror</li>
-          <li>Action</li>
-        </ul>
-        <br />
-        <br />
-        <br />
-	<!-- <button onclick="localStorage.setItem('basket', '[]')">Empty Basket</button> --> 
-        <br />
-        <br />
-      </nav>
-      <article>
+     <article>
       <h2 id="title-header">Available to Rent</h2>
 	<div id="movie-grid">
 	  <div class="movie" data-tags="Shang-Chi and the Legend of the Ten Rings (2021)">

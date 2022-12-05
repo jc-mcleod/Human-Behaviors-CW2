@@ -1,4 +1,3 @@
-/* The contents of this file are intended to be merged with main.css once the website is complete; it exists only to avoid conflicts. */
 .movie {
   display: flex;
   display: flex;
@@ -13,14 +12,18 @@
 }
 
 .search-wrapper {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+  flex-direction: row;
   gap: .25rem;
+  position: relative;
+  top: 6;
+  text-align: center;
+  left: -147;
 }
 
 .movie-thumbnail {
-  width: 250px;
-  height: 370px;
+  width: 260px;
+  height: 380px;
   -webkit-filter: brightness(100%);
 }
 
@@ -41,10 +44,21 @@
   position: fixed;
   top: -17;
   width: 100%;
-  z-index: 99 !important;
+  z-index: 90 !important;
+  list-style: none;
+  text-align: center;
+}
+.genre-navbar {
+  margin: 0;
+  padding: 10;
+  overflow: hidden;
+  background-color: #484444;
+  position: fixed;
+  top: 55;
+  width: 100%;
+  z-index: 80 !important;
   list-style: none;
 }
-
 #title-header {
   position: relative;
   top: 12px;
@@ -67,7 +81,7 @@
 #clickable-logo {
   position: relative;
   top: 2;
-  left: 20;
+  left: -80;
 }
 
 #clickable-basket {
@@ -132,10 +146,10 @@ body {
   flex: 1;
 }
 #main > article {
-  flex: 0.9;
+  flex: 1;
   position: relative;
-  left: 220px;
-  top: 18px;
+  left: 1px;
+  top: 60px;
 }
 #main > nav,
 #main > aside {

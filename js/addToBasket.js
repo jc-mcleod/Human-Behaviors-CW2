@@ -46,7 +46,6 @@ function addToBasket(id,bm) {
             basket[index].rentDays = rent_to_add;
             window.alert("Updated Basket")
         }
-
     } else if (new_bask == false && rent_to_add == 0 && bm == "b") {
         if (confirm("This will remove the item from the basket.") == true) {
             removeFromBasket(index);

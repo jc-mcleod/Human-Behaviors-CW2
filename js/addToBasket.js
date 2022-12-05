@@ -36,10 +36,13 @@ function addToBasket(id,bm) {
             basket.push(movie2);
             window.alert("Added to Basket")
             // Add on rent days to basket if movie is already in basket
-        } else if (new_bask == false && basket[index].rentDays + rent_to_add <= max_rent && rent_to_add >= 0) {
+        } else if (new_bask == false && basket[index].rentDays + rent_to_add <= max_rent && rent_to_add >= 0 && bm == "m") {
             basket[index].rentDays += rent_to_add;
             window.alert("Updated Basket")
             //Notify user that they cannot rent a movie more than specified number of days
+        } else if (new_bask == false && rent_to_add <= max_rent && rent_to_add >= 0 && bm == "b") {
+                basket[index].rentDays = rent_to_add;
+                window.alert("Updated Basket")
         } else if (rent_to_add > max_rent && rent_to_add >= 0) {
             window.alert("Maximum number of days you can rent is " + max_rent);
         }

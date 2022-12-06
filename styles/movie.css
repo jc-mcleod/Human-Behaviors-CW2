@@ -1,0 +1,167 @@
+/* The contents of this file are intended to be merged with main.css once the website is complete; it exists only to avoid conflicts. */
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.movie-thumbnail {
+  width: 250px;
+  height: 370px;
+  -webkit-filter: brightness(100%);
+}
+
+.movie-thumbnail:hover {
+  -webkit-filter: brightness(70%);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.horizontal-navbar > ul {
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #606060;
+  position: fixed;
+  top: -17px;
+  width: 120%;
+  z-index: 99 !important;
+  list-style: none;
+}
+
+#title-header {
+  position: relative;
+  top: 22px;
+  left: 15px;
+}
+
+.movie-caption {
+  width: 200px;
+}
+
+#movie-grid {
+  width: 100%;
+}
+
+#movie-grid > figure {
+  margin:14px;
+  display:inline-block;
+  vertical-align:top;
+}
+
+.horizontal-navbar-button {
+  float: left;
+  list-style: none;
+}
+
+#clickable-logo {
+  position: relative;
+  top: 2;
+  left: 20;
+}
+
+#clickable-basket {
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  right: 40px;
+  top: 11px;
+}
+
+#login-signup {
+  position: fixed;
+  right: 120px;
+  top: 17px;
+  text-decoration: none;
+  color: black;
+}
+
+.picture {
+position: relative;
+right: -100px;
+width: 405px;
+height: 555px;
+}
+
+.horizontal-navbar-button > a:hover {
+
+}
+
+/* END OF NEW CHANGES */
+
+.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+  color: initial;
+}
+
+.movie {
+  display: flex;
+  padding: 10px;
+}
+
+.add-to-basket {
+  width: 100px;
+  height: 40px;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.horizontal-margin {
+  margin: 0 0.75em;
+}
+/*
+https://www.quackit.com/html/html_editors/scratchpad/?example=/css/flexbox/tutorial/nested_flex_containers_example_2
+*/
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+
+#main {
+  display: flex;
+  flex: 1;
+}
+#main > article {
+  flex: 10;
+  position: relative;
+  left: 200px;
+  top: 10px;
+}
+#main > nav,
+#main > aside {
+  flex: 0 0 20vw;
+  background: #9f9f9f;
+}
+#main > nav {
+  order: -1;
+  position: fixed;
+  top: 50;
+  height: 100%;
+  z-index: 98 !important;
+}
+header,
+footer {
+  background: red;
+  height: 5vh;
+  color: white;
+}
+header,
+footer,
+article,
+nav,
+aside {
+  padding: 1em;
+}

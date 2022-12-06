@@ -1,0 +1,132 @@
+.horizontal-navbar > ul {
+  margin: 0;
+  padding: 10;
+  overflow: hidden;
+  background-color: #606060;
+  position: fixed;
+  top: -17px;
+  width: 100%;
+  z-index: 90 !important;
+  list-style: none;
+  text-align: center;
+}
+.genre-navbar {
+  margin: 0;
+  padding: 10;
+  overflow: hidden;
+  background-color: #484444;
+  position: fixed;
+  top: 53;
+  width: 100%;
+  z-index: 80 !important;
+  list-style: none;
+}
+#title-header {
+  position: relative;
+  top: 12px;
+  left: 1px;
+}
+
+.horizontal-navbar-button {
+  float: left;
+  list-style: none;
+}
+
+#clickable-logo {
+  position: relative;
+  top: 2;
+  left: -150;
+}
+
+#clickable-basket {
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  right: 40px;
+  top: 5px;
+}
+
+#login-signup {
+  position: fixed;
+  right: 120px;
+  top: 17px;
+  text-decoration: none;
+  color: black;
+}
+
+.horizontal-navbar-button > a:hover {
+
+}
+
+/* END OF NEW CHANGES */
+
+.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+  color: initial;
+}
+
+
+.add-to-basket {
+  width: 100px;
+  height: 40px;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.horizontal-margin {
+  margin: 0 0.75em;
+}
+/*
+https://www.quackit.com/html/html_editors/scratchpad/?example=/css/flexbox/tutorial/nested_flex_containers_example_2
+*/
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+
+#main {
+  display: flex;
+  flex: 1;
+}
+#main > article {
+  flex: 1;
+  position: relative;
+  left: 5px;
+  top: 60px;
+}
+#main > nav,
+#main > aside {
+  flex: 0 0 20vw;
+  background: #9f9f9f;
+}
+#main > nav {
+  order: -1;
+  position: fixed;
+  top: 50;
+  height: 100%;
+  z-index: 98 !important;
+}
+header,
+footer {
+  background: red;
+  height: 5vh;
+  color: white;
+}
+header,
+footer,
+article,
+nav,
+aside {
+  padding: 1em;
+}

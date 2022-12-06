@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Rentals</title>
-    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/invoice.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,21 +16,37 @@
   </head>
   <body>
     <div id="main">
+        <div class="horizontal-navbar">
+      <ul>
+	<li class="horizontal-navbar-button">
+          <a href="index.html" class="no-decoration"><img src="images/icons/logo-text-main.png" width=45% height=53% id="clickable-logo"></a>
+        </li>
+	<li class="horizontal-navbar-button">
+          <a href="login.html" id="login-signup">Log in/Sign Up</a>
+        </li>
+	<li>
+          <a href="basket.html"><img src="images/icons/basket.png" id="clickable-basket"></a>
+	</li>
+      </ul>
       <nav>
         <strong>Movie Rentals Invoice</strong>
       </nav>
       <article>
-        <h1>Viewing Invoice for Movie Rental</h1>
+        <h1>Invoice</h1>
         <div id="payment-details">
           <p>
             <span id="payment-details-title"></span> <span id="payment-details-firstName"></span> <span id="payment-details-surname"></span>
           </p>
           <p>
             <span id="payment-details-addressNumber"></span> <span id="payment-details-addressStreet"></span>
+          </p>
+          <p>
             <span id="payment-details-addressPostcode"></span>
           </p>
           <p>
             <span id="payment-details-card"></span> <span id="payment-details-cardNumber"></span>
+          </p>
+          <p>
             <span id="payment-details-expiryMonth"></span>/<span id="payment-details-expiryYear"></span>
           </p>
           <br />

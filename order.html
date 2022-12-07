@@ -35,24 +35,24 @@
                 <option value="Mx">Mx</option>
               </select>
               <span>First Name:</span>
-              <input type="text" id="firstName" />
+              <input type="text" id="firstName" required />
               <span>Surname:</span>
-              <input type="text" id="surname" />
+              <input type="text" id="surname" required />
             </div>
             <hr />
             <div>
               <span>Phone Number:</span>
-              <input type="text" id="addressNumber" />
+              <input type="text" id="addressNumber" required />
               <span>Street:</span>
-              <input type="text" id="addressStreet" />
+              <input type="text" id="addressStreet" required />
               <span>Country:</span>
-              <input type="text" id="addressCountry" />
+              <input type="text" id="addressCountry" required />
             </div>
             <div>
               <span>Postcode:</span>
-              <input type="text" id="addressPostcode" />
+              <input type="text" id="addressPostcode" pattern="[0-9]{10}" required />
               <span>City:</span>
-              <input type="text" id="addressCity" />
+              <input type="text" id="addressCity" required />
             </div>
             <hr />
             <div>
@@ -66,10 +66,15 @@
               <input type="radio" name="card" value="switch" id="switch" />
               <label for="switch">Switch</label>
               <span>Card Number:</span>
-              <input type="number" id="cardNumber"/>
-              <span>Expiry Date:</span>
-              <input type="text" id="expiryMonth" />
-              <input type="text" id="expiryYear"/>
+              <input type="number" id="cardNumber" pattern="[0-9]{16}" required />
+            </div>
+            <div>
+              <span>Expiry Month:</span>
+              <input type="text" id="expiryMonth" pattern="[0-9]{2}"required />
+              <span>Expiry Year:</span>
+              <input type="text" id="expiryYear" pattern="[0-9]{2}"required />
+              <span>CVC:</span>
+              <input type="text" id="CVC" pattern="[0-9]{3}" required />
             </div>
             <div>
               <button type="button" onclick="window.location.href='basket.html'">Cancel</a>
@@ -85,7 +90,7 @@
 
     function storeData() {
       // Collect all form data for use in the invoice
-      const formInputs = ["title", "firstName", "surname", "addressNumber", "addressStreet", "addressPostcode", "addressCountry", "addressCity", "cardNumber", "expiryMonth", "expiryYear"];
+      const formInputs = ["title", "firstName", "surname", "addressNumber", "addressStreet", "addressPostcode", "addressCountry", "addressCity", "cardNumber", "expiryMonth", "expiryYear", "CVC"];
       const formData = {};
       formInputs.forEach((inputId) => {
         formData[inputId] = document.getElementById(inputId).value;

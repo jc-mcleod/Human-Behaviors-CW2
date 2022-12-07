@@ -108,7 +108,7 @@
     document.getElementById("movie-actors").textContent = movie.actors;
     document.getElementById("movie-description").textContent = movie.description;
     document.getElementById("movie-release-date").textContent = movie.releaseDate;
-    document.getElementById("movie-price").textContent = movie.price;
+    document.getElementById("movie-price").textContent = '£' + movie.price.toFixed(2);
 	
   </script>
 </html>

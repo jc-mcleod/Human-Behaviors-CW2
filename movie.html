@@ -71,9 +71,12 @@
         <p id="movie-description"></p>
 	
 		<label> Days to rent:</label><br />
-        <input id="days-to-rent" value="3" /><br />
-		<button style="width: 100px; height: 50px" onclick="addToBasket()">Add to Basket</button>
-      
+        <input id="days-to-rent" type="number" min="0" step="1" value="3"/>
+        <br />
+		<button style="width: 100px; height: 50px" onclick="addToBasket(parseInt(urlParams.get('id')),'m')" >Add to Basket</button>
+		
+		
+		<button style="width: 100px; height: 50px" onclick="window.location.href='index.html'">Return to Shop</button>
        
       </article>
 
@@ -90,6 +93,7 @@
   </body>
 
   <script src="./js/movies.js"></script>
+  <script src="./js/addToBasket.js"></script>
   <script>
     // Takes the ID from the URL and loads all the data into the DOM
     const queryString = window.location.search;
@@ -104,19 +108,7 @@
     document.getElementById("movie-actors").textContent = movie.actors;
     document.getElementById("movie-description").textContent = movie.description;
     document.getElementById("movie-release-date").textContent = movie.releaseDate;
-    document.getElementById("movie-price").textContent = movie.price;
+    document.getElementById("movie-price").textContent = '£' + movie.price.toFixed(2);
 	
-	// Prab - Adding working 'Add to basket' button
-	function addToBasket() {
-		const movieId2 = parseInt(urlParams.get("id"));
-		const movie2 = movies.find((movie2) => movie2.id === movieId2);
-        // Get the basket from local storage, or just an empty array if it doesn't exist
-        	const basket = JSON.parse(localStorage.getItem("basket") ?? "[]");
-
-        // Add the amount of days they want to rent
-       	movie2.rentDays = parseInt(document.getElementById("days-to-rent").value);
-        	basket.push(movie2);
-        	localStorage.setItem("basket", JSON.stringify(basket));
-	}
   </script>
 </html>

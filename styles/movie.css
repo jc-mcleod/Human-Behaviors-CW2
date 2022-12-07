@@ -80,9 +80,8 @@
 
 .picture {
 position: relative;
-right: -100px;
-width: 405px;
-height: 555px;
+float: left;
+right: -1100px;
 }
 
 .horizontal-navbar-button > a:hover {

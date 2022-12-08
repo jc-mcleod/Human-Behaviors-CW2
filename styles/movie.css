@@ -1,13 +1,7 @@
 /* The contents of this file are intended to be merged with main.css once the website is complete; it exists only to avoid conflicts. */
 
-
 .no-decoration {
   text-decoration: none;
-}
-
-#movie-image {
-  width: 350px;
-  height: 470px;
 }
 
 .movie-thumbnail {
@@ -86,8 +80,9 @@
 
 .picture {
 position: relative;
-float: left;
-right: -1100px;
+right: -100px;
+width: 405px;
+height: 555px;
 }
 
 .horizontal-navbar-button > a:hover {

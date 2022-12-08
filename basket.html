@@ -97,13 +97,10 @@
                   count++;
               });
               document.getElementById("basket-length").textContent = " (" + basket.length;
-              document.getElementById("basket-length2").textContent = " (" + basket.length;
               if (basket.length == 1) {
                   document.getElementById("basket-multiple").textContent = " Item)";
-                  document.getElementById("basket-multiple2").textContent = " Item)";
               } else {
                   document.getElementById("basket-multiple").textContent = " Items)";
-                  document.getElementById("basket-multiple2").textContent = " Items)";
               }
           } else {
               basketContainer.insertAdjacentHTML(
@@ -116,7 +113,6 @@
           }
 
           document.getElementById("rounded-total-price").textContent = totalPrice.toFixed(2);
-          document.getElementById("rounded-total-price2").textContent = totalPrice.toFixed(2);
       </script>
   </body>
 
